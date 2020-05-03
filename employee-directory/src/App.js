@@ -38,10 +38,10 @@ export default class App extends React.Component {
     return (
       <Col lg = {9} md = {6} sm = {3}>
         <Col lg = {6}>
-          <Index onSearch = {this.onSearch} employeeData = {this.state.filteredEmployee} onEmployeeClick = {this.onEmployeeClick} />
+          <index onSearch = {this.onSearch} employeeData = {this.state.filteredEmployee} onEmployeeClick = {this.onEmployeeClick} />
         </Col>
         <Col lg = {6}>
-          <EmployeeCard selectedEmployee = {this.state.selectedEmployee} />
+          <employeeCard selectedEmployee = {this.state.selectedEmployee} />
         </Col>
       </Col>
     )
