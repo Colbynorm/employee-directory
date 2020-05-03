@@ -1,0 +1,57 @@
+[
+    {
+        "key": "1",
+        "data": {
+            "name": "Colby",
+            "title": "manager",
+            "contact": {
+                "office": "111-111-1111",
+                "email": "colby@manager.com"
+            }
+        }
+    },
+    {
+        "key": "2",
+        "data": {
+            "name": "Josh",
+            "title": "assistant manager",
+            "contact": {
+                "office": "222-222-2222",
+                "email": "josh@assistantmanager.com"
+            }
+        }
+    },
+    {
+        "key": "3",
+        "data": {
+            "name": "Linnea",
+            "title": "employee",
+            "contact": {
+                "office": "333-333-3333",
+                "email": "linnea@employee.com"
+            }
+        }
+    },
+    {
+        "key": "4",
+        "data": {
+            "name": "Kyle",
+            "title": "employee",
+            "contact": {
+                "office": "444-444-4444",
+                "email": "kyle@employee.com"
+            }
+        }
+    },
+    {
+        "key": "5",
+        "data": {
+            "name": "Alex",
+            "title": "employee",
+            "contact": {
+                "office": "555-555-5555",
+                "email": "alex@employee.com"
+            }
+        }
+    }
+]
