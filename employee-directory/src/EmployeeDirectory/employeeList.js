@@ -11,7 +11,8 @@ class EmployeeList extends React.Component {
             <div className = "employeeItem">
                 <div className = "employee">
                     <h2> {name} </h2>
-                    <p> {info} </p>
+                    <h3> {title} </h3>
+                    <p> {contact} </p>
                 </div>
             </div>
         )
