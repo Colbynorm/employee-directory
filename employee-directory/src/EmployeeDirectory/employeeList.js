@@ -6,7 +6,7 @@ class EmployeeList extends React.Component {
     }
 
     render() {
-        const {name, info} = this.props.employee
+        const {name, title, contact} = this.props.employee
         return (
             <div className = "employeeItem">
                 <div className = "employee">
