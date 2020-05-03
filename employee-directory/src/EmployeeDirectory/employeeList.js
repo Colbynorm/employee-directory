@@ -1,0 +1,21 @@
+import React from "react"
+
+class EmployeeList extends React.Component {
+    onClick = () => {
+        this.props.onEmployeeClick(this.props.employee)
+    }
+
+    render() {
+        const {name, info} = this.props.employee
+        return (
+            <div className = "employeeItem">
+                <div className = "employee">
+                    <h2> {name} </h2>
+                    <p> {info} </p>
+                </div>
+            </div>
+        )
+    }
+}
+
+export default EmployeeList
