@@ -1,26 +1,49 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import employeeList from '../src/EmployeeDirectory/employeeList'
+import index from '../src/EmployeeDirectory/index'
+import employeeCard from '../src/EmployeeDirectory/employeeCard'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const filter = (searchText, maxResults) => {
+  return employeeList.filter((employee) => {
+    if (employee.data.name.includes(searchText)) {
+      return true;
+    }
+    return false;
+  }).slice(0, maxResults);
 }
 
-export default App;
+var maxResults = 5;
+
+export default class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      selectedEmployee: employeeList[0].data,
+      filteredEmployee: filterEmployee('', maxResults)
+    }
+  }
+
+  onSearch = (e) => {
+    this.setState({ 
+      filteredEmployee: filterEmployee(e.target.value, maxResults)
+    });
+  }
+  onEmployeeClick = (employee) => {
+    this.setState({
+      selectedEmployee: {name: data.name, title: data.title, contact: data.contact}
+    });
+  }
+
+  render() {
+    return (
+      <Col lg = {9} md = {6} sm = {3}>
+        <Col lg = {6}>
+          <Index onSearch = {this.onSearch} employeeData = {this.state.filteredEmployee} onEmployeeClick = {this.onEmployeeClick} />
+        </Col>
+        <Col lg = {6}>
+          <EmployeeCard selectedEmployee = {this.state.selectedEmployee} />
+        </Col>
+      </Col>
+    )
+  }
+}
