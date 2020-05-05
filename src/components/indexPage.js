@@ -2,7 +2,7 @@ import React from 'react'
 import {FormControl} from 'react-bootstrap'
 import EmployeeList from './employeeList'
 
-class indexPage extends React.Component {
+class IndexPage extends React.Component {
     onChange = (event) => this.props.onSearch(event)
     render() {
         return (
@@ -16,4 +16,4 @@ class indexPage extends React.Component {
     }
 }
 
-export default indexPage
+export default IndexPage
