@@ -2,10 +2,6 @@ import React from "react";
 import Table from 'react-bootstrap/Table'
 
 class EmployeeList extends React.Component {
-    // onClick = () => {
-    //     this.props.onEmployeeClick(this.props.employee)
-    // }
-
     render() {
         return (
             <Table striped bordered hover>

@@ -7,10 +7,15 @@ class IndexPage extends React.Component {
     render() {
         return (
             <div className = "employeeContainer">
-                <h2>Employee Directory</h2>
+                <h1>Employee Directory</h1>
+                <div className = "searchBar">
+                     <p>Please Search Employees Name</p>
                 <FormControl onChange = {this.onChange} />
-                <EmployeeList employeeData = {this.props.employeeData} 
-                 onEmployeeClick = {this.props.onEmployeeClick} />
+                </div>
+                <div className = "employeeData">
+                    <EmployeeList employeeData = {this.props.employeeData} />
+                </div>
+                
             </div>
         );
     }

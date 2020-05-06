@@ -1,6 +1,5 @@
 import React from 'react';
 import employeeList from './components/employeeList.json'
-import EmployeeCard from './components/employeeCard'
 import {Col} from 'react-bootstrap'
 import IndexPage from "./components/indexPage"
 
@@ -13,21 +12,14 @@ const filterEmployee = (searchText, maxResults, employeeList) => {
   }).slice(0, maxResults);
 }
 
-const sortEmployee = (employeeList) => {
-  return employeeList.sort(function(a, b) {
-    var nameA = a.data.name.toUpperCase(); // ignore upper and lowercase
-    var nameB = b.data.name.toUpperCase(); // ignore upper and lowercase
-    if (nameA < nameB) {
-      return -1;
-    }
-    if (nameA > nameB) {
-      return 1;
-    }
-  
-    // names must be equal
-    return 0;
-  });
-}
+// const filterTitle = (searchText, maxResults, employeeList) => {
+//   return employeeList.filter((employee) => {
+//     if(employee.data.title.toLowerCase().includes(searchText.toLowerCase())) {
+//       return true;
+//     }
+//     return false;
+//   }).slice(0, maxResults);
+// }
 
 var maxResults = 5;
 
@@ -36,18 +28,21 @@ export default class App extends React.Component {
   state = {
     employeeList: employeeList,
     selectedEmployee: employeeList[0].data,
-    filteredEmployee: employeeList
+    filteredEmployee: employeeList,
+    //Filter by title not working
+    filteredTitle: employeeList
   }
   
+  // Filter by title not working
+  // onSearch = (e) => {
+  //   this.setState({
+  //     filteredTitle: filterTitle(e.target.value, maxResults, this.state.employeeList)
+  //   });
+  // }
 
   onSearch = (e) => {
     this.setState({ 
       filteredEmployee: filterEmployee(e.target.value, maxResults, this.state.employeeList)
-    });
-  }
-  onEmployeeClick = (employee) => {
-    this.setState({
-      selectedEmployee: {employee}
     });
   }
 
@@ -55,10 +50,8 @@ export default class App extends React.Component {
     return (
       <Col lg = {9} md = {6} sm = {3}>
         <Col lg = {6}>
-          <IndexPage onSearch = {this.onSearch} employeeData = {this.state.filteredEmployee} onEmployeeClick = {this.onEmployeeClick} />
-        </Col>
-        <Col lg = {6}>
-          {/* <EmployeeCard selectedEmployee = {this.state.selectedEmployee} /> */}
+          <IndexPage onSearch = {this.onSearch} employeeData = {this.state.filteredEmployee}/>
+
         </Col>
       </Col>
     )
